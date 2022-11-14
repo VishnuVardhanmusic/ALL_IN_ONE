@@ -5,6 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>ALL IN ONE App</title>
     <style>
         * {
@@ -30,11 +37,16 @@
             border: 3px solid #73AD21;
             padding: 10px;
         }
-
+         #fff{
+            text-align: center;
+            position:center;
+            margin: auto;
+            width: 100%;
+        }
         h1 {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-family: "Lucida Console", "Courier New", monospace;
-            padding-top:100px;
+            padding-top:80px;
         }
 
         input[type='text'] {
@@ -54,15 +66,21 @@
         form {
             margin-bottom: 20px;
         }
+        @media only screen and ( max-width: 620px) {
+          .main{
+            width: 100%;
+          }}
     </style>
 </head>
 <body>
-<div id="main">
+<<div class="container">
+        <div class="row text-center align-items-center ">
+          <div class="col-12 ">
     <h1 >ALL IN ONE</h1>
     <h2>An Omniscient Web Application which tries to answer anything entered </h2>
-    <br/>
+     <br/>
     <form method="GET" autocomplete="off">
-        <div>
+        <div id="fff">
             <label for="name"></label>
             <input type="text" id="name" value="{{ request.GET.name }}" placeholder="Name..." name="name"/>
         </div>
@@ -72,12 +90,10 @@
     {% if result %}
     <div id="desc" >{{ result.vv }}
         <br/>
-        <h2>&#11015; Useful Link &#11015;</h2>
-        <a href="{{ re.vv }}" target="_blank">{{ re.vv }}</a>
+        <a class=" bg-success text-white" style="overflow: auto;" href="{{ re.vv }}" target="_blank">Useful Link</a>
     </div>
-    <br/>
     {% endif %}
-</div><br/><br/>
-<h2>Copyright © Y Vishnu Vardhan 2022</h2>
+              <h2>Copyright © Y Vishnu Vardhan 2022</h2>
+          </div></div></div>
 </body>
 </html>
